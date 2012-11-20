@@ -1,0 +1,28 @@
+; $Id: n8vem 1969 2008-06-26 05:57:30Z hharte $
+;
+; SIMH/AltairZ80 Configuration file for the N8VEM SBC
+; http://groups.google.com/group/n8vem/web/n8vem-single-board-computer-home-page
+;
+; Copyright (c) 2008 Howard M. Harte
+
+set cpu z80
+set cpu noaltairrom
+set n8vem enabled
+
+; Configure Serial Port (Basic polled 16550 UART)
+set sio ansi
+set sio port=68/0/0/0/0/f/0/t
+set sio port=6d/00/01/0/20/f/0/f
+
+; Save ROM and RAM contents on exit
+d n8vem saverom 1
+d n8vem saveram 1
+
+echo Ready to run N8VEM programs
+echo 
+echo To attach a rom image: "att n8vem0 filename.bin"
+echo To attach a ram image: "att n8vem1 filename.bin"
+echo 
+echo Type "go" to boot into monitor, ^E go break back to simulator
+echo 
+
