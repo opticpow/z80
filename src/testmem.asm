@@ -5,4 +5,4 @@ start:
         cp  0ffh             ; -> Compare actual with expected
         jp  z,start          ; -> Jump back to beginning if actual = expected
         halt                   ; -> actual did not match expected so halt
-        .end
+        end

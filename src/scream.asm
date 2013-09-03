@@ -1,14 +1,14 @@
 ; UART 16C550 SERIAL
-UART0:       .EQU    $68            ; DATA IN/OUT
-UART1:       .EQU    $69            ; CHECK RX
-UART2:       .EQU    $6A            ; INTERRUPTS
-UART3:       .EQU    $6B            ; LINE CONTROL
-UART4:       .EQU    $6C            ; MODEM CONTROL
-UART5:       .EQU    $6D            ; LINE STATUS
-UART6:       .EQU    $6E            ; MODEM STATUS
-UART7:       .EQU    $6F            ; SCRATCH REG.
+UART0:       EQU    $68            ; DATA IN/OUT
+UART1:       EQU    $69            ; CHECK RX
+UART2:       EQU    $6A            ; INTERRUPTS
+UART3:       EQU    $6B            ; LINE CONTROL
+UART4:       EQU    $6C            ; MODEM CONTROL
+UART5:       EQU    $6D            ; LINE STATUS
+UART6:       EQU    $6E            ; MODEM STATUS
+UART7:       EQU    $6F            ; SCRATCH REG.
 
-	.ORG	$0000
+	ORG	$0000
 
 
 
@@ -64,5 +64,5 @@ TX_BUSYLP:   IN     A,(UART5)     ; READ Line Status Register
 	JP	MAIN	; REPEAT FOREVER
 
 
-	.END
+	END
 
